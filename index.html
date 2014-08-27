@@ -129,8 +129,13 @@
 		};
 		
 		$pluginsOutput = $(".js-plugins-output");
+		var html = "";
 		$.each(plugins, function() {
-			console.log(this);
+			
+			html += "<h2>" + this.headline + "</h2>";
+			$.each(this.slugs, function() {
+				console.log(this);
+			});
 		});
 		
 	</script>
