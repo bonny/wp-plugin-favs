@@ -132,12 +132,14 @@
 		var html = "";
 		$.each(plugins, function() {
 			
-			html += "<ul class='grid'>";
 			html += "<h2>" + this.headline + "</h2>";
+			html += "<ul class='grid'>";
+			
 			$.each(this.slugs, function() {
 				console.log(this);
 				html += '<li><div class="wordpress-widget" data-slug="' + this + '"></div></li>';
 			});
+			
 			html += "</ul>";
 		});
 		$pluginsOutput.html(html);
