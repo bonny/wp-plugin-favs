@@ -132,15 +132,15 @@
 		var html = "";
 		$.each(plugins, function() {
 			
-			html += "<h2>" + this.headline + "</h2>";
-			html += "<ul class='grid'>";
+			html += "\n<h2>" + this.headline + "</h2>";
+			html += "\n<ul class='grid'>";
 			
 			$.each(this.slugs, function() {
 				console.log(this);
-				html += '<li><div class="wordpress-widget" data-slug="' + this + '"></div></li>';
+				html += "\n<li>\n<div class='wordpress-widget' data-slug='" + this + "'></div>\n</li>";
 			});
 			
-			html += "</ul>";
+			html += "\n</ul>";
 		});
 		$pluginsOutput.html(html);
 		
