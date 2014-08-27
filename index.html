@@ -95,53 +95,46 @@
 
 	<h1>WordPress plugins that I use, like, find useful, or intent to try out</h1>
 	
-	<p>All plugin info shown using <a href="https://github.com/bonny/jQuery-WordPress-Plugin-Widget"></a>my WordPress Javascript Plugin Widget</a></p>.
+	<p>All plugin info shown using <a href="https://github.com/bonny/jQuery-WordPress-Plugin-Widget">my WordPress Javascript Plugin Widget</a></p>.
+	
+	<noscript>
+		<p>Since I use a JavaScript widget to show plugin info, you must use a JavaScript-capable browser
+		with JavaScript enabled. Sorry about that.</p>
+	</noscript>
+	
+	<ul class="grid js-plugins-output"></ul>
 
-	<p>Examples for <a href="https://github.com/bonny/jQuery-WordPress-Plugin-Widget">jQuery WordPress Plugin Widget</a> by <a href="https://twitter.com/eskapism">@eskapism</a>.</p>
-
-	<h2>Popular WordPress plugins</h2>
-	<ul class="grid">
-		<li>
-			<div class="wordpress-widget" data-slug="jetpack"></div>
-		</li>
-		<li>
-			<div class="wordpress-widget" data-slug="wordpress-seo"></div>
-		</li>
-		<li>
-			<div class="wordpress-widget" data-slug="contact-form-7"></div>
-		</li>
-		<li>
-			<div class="wordpress-widget" data-slug="hello-dolly"></div>
-		</li>
-	</ul>
-
-	<h2>Plugins by the author of this widget :)</h2>
-	<ul class="grid">
-		<li>
-			<div class="wordpress-widget" data-slug="simple-fields"></div>
-		</li>
-		<li>
-			<div class="wordpress-widget" data-slug="ep-admin-messages"></div>
-		</li>
-		<li>
-			<div class="wordpress-widget" data-slug="simple-history"></div>
-		</li>
-		<li>
-			<div class="wordpress-widget" data-slug="cms-tree-page-view"></div>
-		</li>
-		<li>
-			<div class="wordpress-widget" data-slug="admin-menu-tree-page-view"></div>
-		</li>
-		<li>
-			<div class="wordpress-widget" data-slug="simple-seo" data-banner="none"></div>
-		</li>
-		<li>
-			<div class="wordpress-widget" data-slug="simple-fields-map-extension"></div>
-		</li>
-		<li class="placeholder"></li>
-	</ul>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+	
+		// Too lazy to write html
+		var plugins = {
+			recommend: [
+				"headline": "I recommend and use",
+				"slugs": [
+					"jetpack",
+					"simple-fields",
+					"simple-history"
+				]
+			],
+			try: [
+				"headline": "Plugins that look nice, but I haven't had time to try yet"
+				"slugs": [
+					"nav-menu-roles",
+					"if-menu",
+					"menu-items-visibility-control"
+				]
+			]
+		};
+		
+		$pluginsOutput = $(".js-plugins-output");
+		$.each(plugins, function() {
+			console.log(this);
+		});
+		
+	</script>
+
 	<script type="text/javascript" src="https://cdn.rawgit.com/bonny/jQuery-WordPress-Plugin-Widget/a19c74fd20a8bebeb44b0fad6bba26a510aa8e59/jquery.WordPressPluginWidget.js"></script>
 
 </body>
