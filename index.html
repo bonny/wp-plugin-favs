@@ -135,7 +135,7 @@
 			html += "<h2>" + this.headline + "</h2>";
 			$.each(this.slugs, function() {
 				console.log(this);
-				html += '<div class="wordpress-widget" data-slug="' + this + '"></div>';
+				html += '<li><div class="wordpress-widget" data-slug="' + this + '"></div></li>';
 			});
 		});
 		$pluginsOutput.html(html);
