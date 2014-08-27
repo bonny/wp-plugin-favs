@@ -95,14 +95,14 @@
 
 	<h1>WordPress plugins that I use, like, find useful, or intent to try out</h1>
 	
-	<p>All plugin info shown using <a href="https://github.com/bonny/jQuery-WordPress-Plugin-Widget">my WordPress Javascript Plugin Widget</a></p>.
+	<p>All plugin info shown using <a href="https://github.com/bonny/jQuery-WordPress-Plugin-Widget">my WordPress Javascript Plugin Widget</a>.</p>
 	
 	<noscript>
 		<p>Since I use a JavaScript widget to show plugin info, you must use a JavaScript-capable browser
 		with JavaScript enabled. Sorry about that.</p>
 	</noscript>
 	
-	<ul class="grid js-plugins-output"></ul>
+	<div class="js-plugins-output"></div>
 
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -132,11 +132,13 @@
 		var html = "";
 		$.each(plugins, function() {
 			
+			html += "<ul class='grid'>";
 			html += "<h2>" + this.headline + "</h2>";
 			$.each(this.slugs, function() {
 				console.log(this);
 				html += '<li><div class="wordpress-widget" data-slug="' + this + '"></div></li>';
 			});
+			html += "</ul>";
 		});
 		$pluginsOutput.html(html);
 		
