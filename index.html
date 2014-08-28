@@ -119,8 +119,13 @@
 				"slugs": [
 "jetpack",
 "simple-fields",
-"simple-history"
-				]
+"simple-history",
+				],
+				"plugins": {
+					"Simple History": "http://wordpress.org/plugins/simple-history/",
+					"Simple Fields": "http://wordpress.org/plugins/simple-history/",
+					"Jetpack": "http://wordpress.org/plugins/jetpack/",
+				}
 			},
 			try: {
 				"headline": "Plugins that look nice, but I haven't had time to try yet",
@@ -201,8 +206,8 @@
 			html += "\n<h2>" + this.headline + "</h2>";
 			html += "\n<ul class='overview'>";
 			
-			$.each(this.slugs, function() {
-				html += "\n<li>\n" + this + "\n</li>";
+			$.each(this.plugins, function(key, val) {
+				html += "\n<li>\n" + key + ":" + val + "\n</li>";
 			});
 			
 			html += "\n</ul>";
@@ -218,7 +223,6 @@
 			html += "\n<ul class='grid'>";
 			
 			$.each(this.slugs, function() {
-				console.log(this);
 				html += "\n<li>\n<div class='wordpress-widget' data-slug='" + this + "'></div>\n</li>";
 			});
 			
