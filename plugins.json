@@ -1,88 +1,254 @@
-{
-	"recommend": {
-		"headline": "I recommend and use",
-		"plugins": [
-			{
-				"name": "Simple History",
-				"url": "http://wordpress.org/plugins/simple-history/"
-			},
-			{
-				"name": "Simple Fields",
-				"url": "http://wordpress.org/plugins/simple-history/"
-			},
-			{
-				"name": "Jetpack",
-				"url": "http://wordpress.org/plugins/jetpack/"
-			}
-		]
+[
+	{
+		"name": "Simple History",
+		"url": "http://wordpress.org/plugins/simple-history/"
 	},
-	"try": {
-		"headline": "Plugins that look nice, but I haven't had time to try yet",
-		"plugins": {},
-		"slugs": [
-			"nav-menu-roles",
-			"if-menu",
-			"menu-items-visibility-control",
-			"caldera-forms",
-			"transients-manager",
-			"redis-object-cache",
-			"wp-admin-display-hooks",
-			"admin-column-view",
-			"add-ids-to-header-tags",
-			"busted",
-			"angry-creative-logger",
-			"wp-fastest-cache",
-			"assetsminify",
-			"hotspots",
-			"debug-this",
-			"simple-fields-map-extension",
-			"column-shortcodes",
-			"wp-all-import",
-			"ewww-image-optimizer",
-			"responsive-video-embeds",
-			"debug-bar-cron",
-			"iwp-client",
-			"wp-approve-user",
-			"p3-profiler",
-			"nginx-champuru",
-			"developer",
-			"debugger",
-			"taxonomy-terms-order",
-			"right-now-reloaded",
-			"wordpress-backup-to-dropbox",
-			"bwp-minify",
-			"debug-bar-extender",
-			"debug-bar-console",
-			"debug-bar",
-			"admin-menu-tree-page-view",
-			"simple-seo",
-			"apc",
-			"nice-navigation",
-			"simple-history",
-			"post-type-switcher",
-			"simple-fields",
-			"wordpress-hook-sniffer",
-			"cms-tree-page-view",
-			"nginx-proxy-cache-integrator",
-			"memcached",
-			"json-api",
-			"mce-table-buttons",
-			"query-monitor",
-			"restricted-site-access",
-			"w3-total-cache",
-			"wp-migrate-db",
-			"autoptimize",
-			"wp-firephp",
-			"wp-file-cache",
-			"velvet-blues-update-urls",
-			"wp-widget-cache",
-			"post-expirator",
-			"batcache",
-			"wp-super-cache",
-			"google-analytics-for-wordpress",
-			"redirection",
-			"members-only",
-			"search-and-replace"
-		]
+	{
+		"name": "Simple Fields",
+		"url": "http://wordpress.org/plugins/simple-history/"
+	},
+	{
+		"name": "Jetpack",
+		"url": "http://wordpress.org/plugins/jetpack/"
+	},
+	{
+		"name": "Caldera Forms",
+		"url": "https://wordpress.org/plugins/caldera-forms/"
+	},
+	{
+		"name": "Transients Manager",
+		"url": "https://wordpress.org/plugins/transients-manager/"
+	},
+	{
+		"name": "Redis Object Cache",
+		"url": "https://wordpress.org/plugins/redis-object-cache/"
+	},
+	{
+		"name": "WP Admin Display Hooks",
+		"url": "https://wordpress.org/plugins/wp-admin-display-hooks/"
+	},
+	{
+		"name": "Admin Column View",
+		"url": "https://wordpress.org/plugins/admin-column-view/"
+	},
+	{
+		"name": "Add IDs to Header Tags",
+		"url": "https://wordpress.org/plugins/add-ids-to-header-tags/"
+	},
+	{
+		"name": "Busted!",
+		"url": "https://wordpress.org/plugins/busted/"
+	},
+	{
+		"name": "Angry Creative Inspector",
+		"url": "https://wordpress.org/plugins/angry-creative-logger/"
+	},
+	{
+		"name": "WP Fastest Cache",
+		"url": "https://wordpress.org/plugins/wp-fastest-cache/"
+	},
+	{
+		"name": "AssetsMinify",
+		"url": "https://wordpress.org/plugins/assetsminify/"
+	},
+	{
+		"name": "Hotspots Analytics - Heatmaps, User Activity &amp; Custom Event Tracking",
+		"url": "https://wordpress.org/plugins/hotspots/"
+	},
+	{
+		"name": "Debug This",
+		"url": "https://wordpress.org/plugins/debug-this/"
+	},
+	{
+		"name": "Simple Fields Map extension",
+		"url": "https://wordpress.org/plugins/simple-fields-map-extension/"
+	},
+	{
+		"name": "Column Shortcodes",
+		"url": "https://wordpress.org/plugins/column-shortcodes/"
+	},
+	{
+		"name": "Import any XML or CSV File to WordPress",
+		"url": "https://wordpress.org/plugins/wp-all-import/"
+	},
+	{
+		"name": "EWWW Image Optimizer",
+		"url": "https://wordpress.org/plugins/ewww-image-optimizer/"
+	},
+	{
+		"name": "Responsive Video Embeds",
+		"url": "https://wordpress.org/plugins/responsive-video-embeds/"
+	},
+	{
+		"name": "Debug Bar Cron",
+		"url": "https://wordpress.org/plugins/debug-bar-cron/"
+	},
+	{
+		"name": "InfiniteWP Client",
+		"url": "https://wordpress.org/plugins/iwp-client/"
+	},
+	{
+		"name": "WP Approve User",
+		"url": "https://wordpress.org/plugins/wp-approve-user/"
+	},
+	{
+		"name": "P3 (Plugin Performance Profiler)",
+		"url": "https://wordpress.org/plugins/p3-profiler/"
+	},
+	{
+		"name": "Nginx Cache Controller",
+		"url": "https://wordpress.org/plugins/nginx-champuru/"
+	},
+	{
+		"name": "Developer",
+		"url": "https://wordpress.org/plugins/developer/"
+	},
+	{
+		"name": "Debugger",
+		"url": "https://wordpress.org/plugins/debugger/"
+	},
+	{
+		"name": "Category Order and Taxonomy Terms Order",
+		"url": "https://wordpress.org/plugins/taxonomy-terms-order/"
+	},
+	{
+		"name": "Right Now Reloaded",
+		"url": "https://wordpress.org/plugins/right-now-reloaded/"
+	},
+	{
+		"name": "WordPress Backup to Dropbox",
+		"url": "https://wordpress.org/plugins/wordpress-backup-to-dropbox/"
+	},
+	{
+		"name": "Better WordPress Minify",
+		"url": "https://wordpress.org/plugins/bwp-minify/"
+	},
+	{
+		"name": "Debug-Bar-Extender",
+		"url": "https://wordpress.org/plugins/debug-bar-extender/"
+	},
+	{
+		"name": "Debug Bar Console",
+		"url": "https://wordpress.org/plugins/debug-bar-console/"
+	},
+	{
+		"name": "Debug Bar",
+		"url": "https://wordpress.org/plugins/debug-bar/"
+	},
+	{
+		"name": "Admin Menu Tree Page View",
+		"url": "https://wordpress.org/plugins/admin-menu-tree-page-view/"
+	},
+	{
+		"name": "Simple SEO (Search Engine Optimization)",
+		"url": "https://wordpress.org/plugins/simple-seo/"
+	},
+	{
+		"name": "APC Object Cache Backend",
+		"url": "https://wordpress.org/plugins/apc/"
+	},
+	{
+		"name": "Nice Navigation",
+		"url": "https://wordpress.org/plugins/nice-navigation/"
+	},
+	{
+		"name": "Simple History",
+		"url": "https://wordpress.org/plugins/simple-history/"
+	},
+	{
+		"name": "Post Type Switcher",
+		"url": "https://wordpress.org/plugins/post-type-switcher/"
+	},
+	{
+		"name": "Simple Fields",
+		"url": "https://wordpress.org/plugins/simple-fields/"
+	},
+	{
+		"name": "WordPress Hook Sniffer",
+		"url": "https://wordpress.org/plugins/wordpress-hook-sniffer/"
+	},
+	{
+		"name": "CMS Tree Page View",
+		"url": "https://wordpress.org/plugins/cms-tree-page-view/"
+	},
+	{
+		"name": "WordPress Nginx proxy cache integrator",
+		"url": "https://wordpress.org/plugins/nginx-proxy-cache-integrator/"
+	},
+	{
+		"name": "Memcached Object Cache",
+		"url": "https://wordpress.org/plugins/memcached/"
+	},
+	{
+		"name": "JSON API",
+		"url": "https://wordpress.org/plugins/json-api/"
+	},
+	{
+		"name": "MCE Table Buttons",
+		"url": "https://wordpress.org/plugins/mce-table-buttons/"
+	},
+	{
+		"name": "Query Monitor",
+		"url": "https://wordpress.org/plugins/query-monitor/"
+	},
+	{
+		"name": "Restricted Site Access",
+		"url": "https://wordpress.org/plugins/restricted-site-access/"
+	},
+	{
+		"name": "W3 Total Cache",
+		"url": "https://wordpress.org/plugins/w3-total-cache/"
+	},
+	{
+		"name": "WP Migrate DB",
+		"url": "https://wordpress.org/plugins/wp-migrate-db/"
+	},
+	{
+		"name": "Autoptimize",
+		"url": "https://wordpress.org/plugins/autoptimize/"
+	},
+	{
+		"name": "WP-FirePHP",
+		"url": "https://wordpress.org/plugins/wp-firephp/"
+	},
+	{
+		"name": "WP File Cache",
+		"url": "https://wordpress.org/plugins/wp-file-cache/"
+	},
+	{
+		"name": "Velvet Blues Update URLs",
+		"url": "https://wordpress.org/plugins/velvet-blues-update-urls/"
+	},
+	{
+		"name": "WP Widget Cache",
+		"url": "https://wordpress.org/plugins/wp-widget-cache/"
+	},
+	{
+		"name": "Post Expirator",
+		"url": "https://wordpress.org/plugins/post-expirator/"
+	},
+	{
+		"name": "Batcache",
+		"url": "https://wordpress.org/plugins/batcache/"
+	},
+	{
+		"name": "WP Super Cache",
+		"url": "https://wordpress.org/plugins/wp-super-cache/"
+	},
+	{
+		"name": "Google Analytics by Yoast",
+		"url": "https://wordpress.org/plugins/google-analytics-for-wordpress/"
+	},
+	{
+		"name": "Redirection",
+		"url": "https://wordpress.org/plugins/redirection/"
+	},
+	{
+		"name": "Members Only",
+		"url": "https://wordpress.org/plugins/members-only/"
+	},
+	{
+		"name": "Search and Replace",
+		"url": "https://wordpress.org/plugins/search-and-replace"
 	}
-}
+]

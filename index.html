@@ -8,86 +8,88 @@
     <title>WordPress Plugin Favorites</title>
     
     <style>
-	body {
-		font-family: sans-serif;
-		padding: 2em;
-		margin: 0;
-	}
-
-	@media only screen and (max-width: 480px) {
 		body {
-			padding: .5em;
+			font-family: sans-serif;
+			padding: 2em;
+			margin: 0;
 		}
-	}
 
-	.grid {
-		text-align: justify;
-		font-size: 0.1px;
-		margin: 0;
-		padding: 0;
-	}
+		@media only screen and (max-width: 480px) {
+			body {
+				padding: .5em;
+			}
+		}
 
-	.grid li {
-		text-align: left;
-	}
+		.grid {
+			text-align: justify;
+			font-size: 0.1px;
+			margin: 0;
+			padding: 0;
+		}
 
-	.grid li {
-		display: inline-block;
-		width: 23%;
-		padding-top: 2%;
-		margin-bottom: 2.5%;
-		vertical-align: top;
-	}
+		.grid li {
+			text-align: left;
+		}
 
-	.grid li.placeholder {
-		padding: 0;
-	}
+		.grid li {
+			display: inline-block;
+			width: 23%;
+			padding-top: 2%;
+			margin-bottom: 2.5%;
+			vertical-align: top;
+		}
 
-	.grid:after {
-	    content: '';
-	    display: inline-block;
-	    width: 100%;
-	}
+		.grid li.placeholder {
+			padding: 0;
+		}
 
-	/* 3 col */
-	@media (max-width: 1280px){
-	  .grid li{
-	    width: 31%;
-	    padding-top: 3%;
-	    margin-bottom: 3%;
-	  }
-	}
+		.grid:after {
+		    content: '';
+		    display: inline-block;
+		    width: 100%;
+		}
 
-	/* 2 col */
-	@media (max-width: 768px){
-	  .grid li{
-	    width: 48%;
-	    padding-top: 4%;
-	    margin-bottom: 4%;
-	  }
-	}
+		/* 3 col */
+		@media (max-width: 1280px){
+		  .grid li{
+		    width: 31%;
+		    padding-top: 3%;
+		    margin-bottom: 3%;
+		  }
+		}
 
-	/* Single col */
-	@media (max-width: 480px){
-	  .grid li{
-	    width: 100%;
-	    margin-bottom: 5%;
-	  }
-	}
+		/* 2 col */
+		@media (max-width: 768px){
+		  .grid li{
+		    width: 48%;
+		    padding-top: 4%;
+		    margin-bottom: 4%;
+		  }
+		}
 
-	h2 {
-		clear: both;
-	}
-	a,
-	a:visited {
-		color: #21759b;
-		text-decoration: none;
-	}
-	a:hover {
-		border-bottom: 1px solid #21759b;
-	}
-	
-    </style>
+		/* Single col */
+		@media (max-width: 480px){
+		  .grid li{
+		    width: 100%;
+		    margin-bottom: 5%;
+		  }
+		}
+
+		h2 {
+			clear: both;
+		}
+		
+		a,
+		a:visited {
+			color: #21759b;
+			text-decoration: none;
+		}
+		
+		a:hover {
+			border-bottom: 1px solid #21759b;
+		}
+		
+	</style>
 
   </head>
 
@@ -104,55 +106,32 @@
 		with JavaScript enabled. Sorry about that.</p>
 	</noscript>
 	
+	<div class="js-nav"></div>
 	<div class="js-plugins-output-overview"></div>
 	<div class="js-plugins-output"></div>
+
+	<script type="text/html" id="tmpl-nav">
+		
+		<h2>Plugins</h2>
+
+		<ul>
+			<% _.each(collection, function(plugin) { %>
+				<li>
+					<a href="#"><%= plugin.name %></a>
+				</li>
+			<% }); %>
+		</ul>
+
+	</script>
 
 	<footer>
 		<a href="https://github.com/bonny/wp-plugin-favs/edit/gh-pages/index.html">Edit page</a>
 	</footer>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script>
-	
-		var plugins = $.getJSON("plugins.json", function(r) {
-			console.log("json loaded", r);
-		});
-		
-		$pluginsOutput = $(".js-plugins-output");
-		$pluginsOutputOverview = $(".js-plugins-output-overview");
-		
-		var html = "";
-		$.each(plugins, function() {
-			
-			html += "\n<h2>" + this.headline + "</h2>";
-			html += "\n<ul class='overview'>";
-			console.log("this.plugins", this.plugins);
-			$.each(this.plugins, function(key, val) {
-				html += "\n<li>\n" + key + ":" + val + "\n</li>";
-			});
-			
-			html += "\n</ul>";
-		});
-		
-		$pluginsOutputOverview.html(html);
-
-
-		var html = "";
-		$.each(plugins, function() {
-			
-			html += "\n<h2>" + this.headline + "</h2>";
-			html += "\n<ul class='grid'>";
-			
-			$.each(this.slugs, function() {
-				html += "\n<li>\n<div class='wordpress-widget' data-slug='" + this + "'></div>\n</li>";
-			});
-			
-			html += "\n</ul>";
-		});
-		$pluginsOutput.html(html);
-		
-	</script>
-
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+	<script src="plugins.js"></script>
 	<script type="text/javascript" src="https://cdn.rawgit.com/bonny/jQuery-WordPress-Plugin-Widget/a19c74fd20a8bebeb44b0fad6bba26a510aa8e59/jquery.WordPressPluginWidget.js"></script>
 
               <script type="text/javascript">
