@@ -102,6 +102,7 @@
 		with JavaScript enabled. Sorry about that.</p>
 	</noscript>
 	
+	<div class="js-plugins-output-overview"></div>
 	<div class="js-plugins-output"></div>
 
 	<footer>
@@ -192,6 +193,24 @@
 		};
 		
 		$pluginsOutput = $(".js-plugins-output");
+		$pluginsOutputOverview = $(".js-plugins-output-overview");
+		
+		var html = "";
+		$.each(plugins, function() {
+			
+			html += "\n<h2>" + this.headline + "</h2>";
+			html += "\n<ul class='grid'>";
+			
+			$.each(this.slugs, function() {
+				html += "\n<li>\n" + this + "\n</li>";
+			});
+			
+			html += "\n</ul>";
+		});
+		
+		$pluginsOutputOverview.html(html);
+
+
 		var html = "";
 		$.each(plugins, function() {
 			
