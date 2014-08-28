@@ -205,7 +205,7 @@
 			
 			html += "\n<h2>" + this.headline + "</h2>";
 			html += "\n<ul class='overview'>";
-			
+			console.log("this.plugins", this.plugins);
 			$.each(this.plugins, function(key, val) {
 				html += "\n<li>\n" + key + ":" + val + "\n</li>";
 			});
