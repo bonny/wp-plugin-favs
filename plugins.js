@@ -22,8 +22,9 @@ var Plugins = Backbone.Collection.extend({
 		//var url = model.url;
 		models = _.each(models, function(model) {
 
-			var slug = model.url.replace("https://wordpress.org/plugins/", "");
+			var slug = model.url.replace(/https?:\/\/wordpress.org\/plugins\//, "");
 			slug = _.str.rtrim(slug, "/");
+			console.log("slug", slug);
 			model.slug = slug;
 
 		});
@@ -165,13 +166,14 @@ var PluginView = Backbone.View.extend({
 	render: function() {
 	
 		console.log("Plugin View render");
-		console.log("plugins", this.collection);
+		console.log("plugins", this.collection.toJSON());
 
 		this.$el.html( this.template({
 			tag: this.tag,
 			plugins: this.collection.toJSON()
 		} ));
-
+		
+		$.getScript("https://cdn.rawgit.com/bonny/jQuery-WordPress-Plugin-Widget/a19c74fd20a8bebeb44b0fad6bba26a510aa8e59/jquery.WordPressPluginWidget.js");
 
 	}
 

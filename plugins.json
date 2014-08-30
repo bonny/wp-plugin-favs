@@ -6,7 +6,7 @@
 	},
 	{
 		"name": "Simple Fields",
-		"url": "http://wordpress.org/plugins/simple-history/",
+		"url": "http://wordpress.org/plugins/simple-fields/",
 		"tags": ["metadata", "custom fields", "attachments"]
 	},
 	{
@@ -160,16 +160,8 @@
 		"url": "https://wordpress.org/plugins/nice-navigation/"
 	},
 	{
-		"name": "Simple History",
-		"url": "https://wordpress.org/plugins/simple-history/"
-	},
-	{
 		"name": "Post Type Switcher",
 		"url": "https://wordpress.org/plugins/post-type-switcher/"
-	},
-	{
-		"name": "Simple Fields",
-		"url": "https://wordpress.org/plugins/simple-fields/"
 	},
 	{
 		"name": "WordPress Hook Sniffer",

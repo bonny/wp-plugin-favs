@@ -147,16 +147,18 @@
 	<script type="text/html" id="tmpl-plugins">
 		
 		<h2>Plugins for tag <em><%= tag %></em></h2>
+		
+		<ul class="grid">
+			<% _.each(plugins, function(plugin) { %>
+				<li>
 
-		<% _.each(plugins, function(plugin) { %>
-			<li>
+					<div class="wordpress-widget" data-slug="<%= plugin.slug %>">
+						<!-- <a href="<%= plugin.url %>"><%= plugin.name %></a> -->
+					</div>
 
-				<div class="wordpress-widget" data-slug="<%= plugin.slug %>">
-					<!-- <a href="<%= plugin.url %>"><%= plugin.name %></a> -->
-				</div>
-
-			</li>
-		<% }); %>		
+				</li>
+			<% }); %>
+		</ul>
 
 	</script>
 
@@ -184,19 +186,17 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.3/underscore.string.min.js"></script>
 	<script src="plugins.js"></script>
-	<script type="text/javascript" src="https://cdn.rawgit.com/bonny/jQuery-WordPress-Plugin-Widget/a19c74fd20a8bebeb44b0fad6bba26a510aa8e59/jquery.WordPressPluginWidget.js"></script>
 
-			  <script type="text/javascript">
-			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		  </script>
-		  <script type="text/javascript">
-			try {
-			  var pageTracker = _gat._getTracker("UA-181460-28");
-			pageTracker._trackPageview();
-			} catch(err) {}
-		  </script>
-
+	  <script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	  </script>
+	  <script type="text/javascript">
+		try {
+		  var pageTracker = _gat._getTracker("UA-181460-28");
+		pageTracker._trackPageview();
+		} catch(err) {}
+	  </script>
 
   </body>
 </html>
