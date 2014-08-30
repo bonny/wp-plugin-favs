@@ -1,35 +1,43 @@
 [
 	{
 		"name": "Simple History",
-		"url": "http://wordpress.org/plugins/simple-history/"
+		"url": "http://wordpress.org/plugins/simple-history/",
+		"tags": ["dashboard", "activity"]
 	},
 	{
 		"name": "Simple Fields",
-		"url": "http://wordpress.org/plugins/simple-history/"
+		"url": "http://wordpress.org/plugins/simple-history/",
+		"tags": ["metadata", "custom fields", "attachments"]
 	},
 	{
 		"name": "Jetpack",
-		"url": "http://wordpress.org/plugins/jetpack/"
+		"url": "http://wordpress.org/plugins/jetpack/",
+		"tags": ["general"]
 	},
 	{
 		"name": "Caldera Forms",
-		"url": "https://wordpress.org/plugins/caldera-forms/"
+		"url": "https://wordpress.org/plugins/caldera-forms/",
+		"tags": ["forms"]
 	},
 	{
 		"name": "Transients Manager",
-		"url": "https://wordpress.org/plugins/transients-manager/"
+		"url": "https://wordpress.org/plugins/transients-manager/",
+		"tags": ["transients", "database"]
 	},
 	{
 		"name": "Redis Object Cache",
-		"url": "https://wordpress.org/plugins/redis-object-cache/"
+		"url": "https://wordpress.org/plugins/redis-object-cache/",
+		"tags": ["performane", "database", "cache"]
 	},
 	{
 		"name": "WP Admin Display Hooks",
-		"url": "https://wordpress.org/plugins/wp-admin-display-hooks/"
+		"url": "https://wordpress.org/plugins/wp-admin-display-hooks/",
+		"tags": ["admin"]
 	},
 	{
 		"name": "Admin Column View",
-		"url": "https://wordpress.org/plugins/admin-column-view/"
+		"url": "https://wordpress.org/plugins/admin-column-view/",
+		"tags": ["admin"]
 	},
 	{
 		"name": "Add IDs to Header Tags",

@@ -1,7 +1,4 @@
 
-/*
-plugins = collection?
-*/
 
 var Plugins = Backbone.Collection.extend({
 
@@ -17,6 +14,22 @@ var Plugins = Backbone.Collection.extend({
 
 	onReset: function() {
 
+	},
+
+	// parse json add add slugs
+	parse: function(models) {
+		
+		//var url = model.url;
+		models = _.each(models, function(model) {
+
+			var slug = model.url.replace("https://wordpress.org/plugins/", "");
+			slug = _.str.rtrim(slug, "/");
+			model.slug = slug;
+
+		});
+
+		return models;
+
 	}
 
 });
@@ -31,12 +44,52 @@ var NavView = Backbone.View.extend({
 	},
 
 	render: function() {
-			
+
+		var tags = {};
+		
+		_.each(this.collection.pluck("tags"), function(subtags) {
+			_.each(subtags, function(tag) {
+
+				if ( ! _.has(tags, tag) ) {
+
+					tags[tag] = {
+						tag: tag,
+						count: 0
+					};
+
+				}
+				
+				tags[tag].count++;				
+
+			});
+		});
+		
 		this.$el.html( this.template({
-			collection: this.collection.toJSON()
+			tags: tags
 		} ));
 
 		return this;
+
+	},
+
+	// show all plugins matching a tag
+	showTag: function(tag) {
+		
+		var plugins = this.collection.filter(function(plugin) {
+			
+			return _.indexOf(plugin.get("tags"), tag) !== -1;
+
+		});
+
+		var pluginsCollection = new Backbone.Collection;
+		pluginsCollection.reset( plugins );
+	
+		new PluginView({
+			collection: pluginsCollection,
+			tag: tag
+		}).render();
+
+		this.render();
 
 	}
 
@@ -56,6 +109,10 @@ var MainView = Backbone.View.extend({
 			parent: this
 		});
 
+		this.router = new AppRouter({
+			mainView: this
+		});
+
 		this.plugins.on("reset", this.nav.render, this.nav);
 
 	},
@@ -71,22 +128,59 @@ var MainView = Backbone.View.extend({
 var AppRouter = Backbone.Router.extend({
 
 	routes: {
-		"help":                 "help",    // #help
-		"search/:query":        "search",  // #search/kiwis
-		"search/:query/p:page": "search"   // #search/kiwis/p7
+		"plugins/:slug": "help",    // #help
+		"plugin/:slug": "plugin",   // #search/kiwis
+		"tag/:slug/": "tag"   		// #tag/database
 	},
 
-	help: function() {
-		console.log("help yo");
+	initialize: function(options) {
+
+		this.mainView = options.mainView;
+
+	},
+
+	tag: function(slug) {
+		
+		this.mainView.nav.showTag(slug);
+
+	},
+
+	plugin: function(slug) {
+		console.log("view plugin", slug);
 	}
 
 });
 
-var app = new MainView({});
+var PluginView = Backbone.View.extend({
+	
+	el: ".js-plugins-output",
+
+	initialize: function(options) {
+	
+		this.tag = options.tag;
+		this.template = _.template( $("#tmpl-plugins").html() );
+
+	},
+
+	render: function() {
+	
+		console.log("Plugin View render");
+		console.log("plugins", this.collection);
+
+		this.$el.html( this.template({
+			tag: this.tag,
+			plugins: this.collection.toJSON()
+		} ));
+
+
+	}
+
+});
+
+var app = new MainView();
 
 $(function() {
 
-	new AppRouter();
 	Backbone.history.start({pushState: false});
 
 });

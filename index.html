@@ -2,12 +2,22 @@
 <html>
 
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="WordPress Plugin Favs: A list of useful WordPress plugins">
-    <title>WordPress Plugin Favorites</title>
-    
-    <style>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="description" content="WordPress Plugin Favs: A list of useful WordPress plugins">
+	<title>WordPress Plugin Favorites</title>
+	
+	<style>
+		.clearfix:before,
+		.clearfix:after {
+			content: " "; /* 1 */
+			display: table; /* 2 */
+		}
+
+		.clearfix:after {
+			clear: both;
+		}
+		
 		body {
 			font-family: sans-serif;
 			padding: 2em;
@@ -18,6 +28,23 @@
 			body {
 				padding: .5em;
 			}
+		}
+
+		.nav--main {
+			float: left;
+			width: 25%;
+		}
+
+		.plugins {
+			float: left;
+			width: 75%;
+		}
+
+		footer {
+			clear: both;
+			border-top: 1px solid #aaa;
+			margin-top: 2em;
+			padding-top: 2em;
 		}
 
 		.grid {
@@ -44,34 +71,34 @@
 		}
 
 		.grid:after {
-		    content: '';
-		    display: inline-block;
-		    width: 100%;
+			content: '';
+			display: inline-block;
+			width: 100%;
 		}
 
 		/* 3 col */
 		@media (max-width: 1280px){
 		  .grid li{
-		    width: 31%;
-		    padding-top: 3%;
-		    margin-bottom: 3%;
+			width: 31%;
+			padding-top: 3%;
+			margin-bottom: 3%;
 		  }
 		}
 
 		/* 2 col */
 		@media (max-width: 768px){
 		  .grid li{
-		    width: 48%;
-		    padding-top: 4%;
-		    margin-bottom: 4%;
+			width: 48%;
+			padding-top: 4%;
+			margin-bottom: 4%;
 		  }
 		}
 
 		/* Single col */
 		@media (max-width: 480px){
 		  .grid li{
-		    width: 100%;
-		    margin-bottom: 5%;
+			width: 100%;
+			margin-bottom: 5%;
 		  }
 		}
 
@@ -97,7 +124,9 @@
 
 	<h1>WordPress plugins that I use, like, find useful, or intent to try out</h1>
 	
-	<p><a href="https://twitter.com/eskapism">@eskapism at twitter</a>, <a href="https://github.com/bonny/"></a>bonny at Github</a></p>
+	<p>
+		<a href="https://twitter.com/eskapism">@eskapism at twitter</a>, 
+		<a href="https://github.com/bonny/">bonny at Github</a></p>
 	
 	<p>All plugin info shown using <a href="https://github.com/bonny/jQuery-WordPress-Plugin-Widget">my WordPress Javascript Plugin Widget</a>.</p>
 	
@@ -105,45 +134,68 @@
 		<p>Since I use a JavaScript widget to show plugin info, you must use a JavaScript-capable browser
 		with JavaScript enabled. Sorry about that.</p>
 	</noscript>
-	
-	<div class="js-nav"></div>
-	<div class="js-plugins-output-overview"></div>
-	<div class="js-plugins-output"></div>
+
+	<div class="clearfix">
+		<div class="js-nav nav nav--main"></div>
+		<div class="js-plugins-output plugins"></div>
+	</div>
+
+	<footer class="">
+		<a href="https://github.com/bonny/wp-plugin-favs/edit/gh-pages/index.html">Edit page</a>
+	</footer>
+
+	<script type="text/html" id="tmpl-plugins">
+		
+		<h2>Plugins for tag <em><%= tag %></em></h2>
+
+		<% _.each(plugins, function(plugin) { %>
+			<li>
+
+				<div class="wordpress-widget" data-slug="<%= plugin.slug %>">
+					<!-- <a href="<%= plugin.url %>"><%= plugin.name %></a> -->
+				</div>
+
+			</li>
+		<% }); %>		
+
+	</script>
 
 	<script type="text/html" id="tmpl-nav">
 		
 		<h2>Plugins</h2>
 
+		<!-- <p><%= _.size(tags) %> tags:</p> -->
+
 		<ul>
-			<% _.each(collection, function(plugin) { %>
+			<li><a href="#all">All</a></li>
+			<% _.each(tags, function(tag) { %>
 				<li>
-					<a href="#"><%= plugin.name %></a>
+					<a href="#tag/<%= tag.tag %>/"><%= _.str.capitalize(tag.tag) %></a>
+					<%= tag.count %>
 				</li>
 			<% }); %>
 		</ul>
 
 	</script>
 
-	<footer>
-		<a href="https://github.com/bonny/wp-plugin-favs/edit/gh-pages/index.html">Edit page</a>
-	</footer>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.3/underscore.string.min.js"></script>
 	<script src="plugins.js"></script>
 	<script type="text/javascript" src="https://cdn.rawgit.com/bonny/jQuery-WordPress-Plugin-Widget/a19c74fd20a8bebeb44b0fad6bba26a510aa8e59/jquery.WordPressPluginWidget.js"></script>
 
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-181460-28");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+			  <script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		  </script>
+		  <script type="text/javascript">
+			try {
+			  var pageTracker = _gat._getTracker("UA-181460-28");
+			pageTracker._trackPageview();
+			} catch(err) {}
+		  </script>
 
 
   </body>
